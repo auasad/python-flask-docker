@@ -36,7 +36,7 @@ pipeline {
       steps{
         sshagent(['DockerDevServer']) {
           sh 'ssh -o StrictHostKeyChecking=no asad@10.128.0.3 docker stop python-cicd || true'
-          sh 'ssh -o StrictHostKeyChecking=no asad@10.128.0.3 docker rm auasad/python-cicd || true'
+          sh 'ssh -o StrictHostKeyChecking=no asad@10.128.0.3 docker rm python-cicd || true'
         }  
       }
    }
