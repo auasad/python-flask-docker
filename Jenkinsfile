@@ -35,8 +35,8 @@ pipeline {
     stage('Stopping & remove Old Image'){
       steps{
         sshagent(['DockerDevServer']) {
-          sh 'ssh -o StrictHostKeyChecking=no asad@10.128.0.3 docker stop python-cicd || true'
-          sh 'ssh -o StrictHostKeyChecking=no asad@10.128.0.3 docker rm python-cicd || true'
+          sh 'ssh -o StrictHostKeyChecking=no asad@10.128.0.3 docker stop my-python-app || true'
+          sh 'ssh -o StrictHostKeyChecking=no asad@10.128.0.3 docker rm my-python-app || true'
         }  
       }
    }
