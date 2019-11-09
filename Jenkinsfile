@@ -44,7 +44,7 @@ pipeline {
       steps{
       script {
         docker.withRegistry( '', registryCredential ) {
-          def dockerRun = 'docker run -p 8080:3000 -d --name my-python-app auasad/python-cicd:${BUILD_NUMBER}'
+          def dockerRun = 'docker run -p 8080:8080 -d --name my-python-app auasad/python-cicd:${BUILD_NUMBER}'
             sshagent(['instance-uat']) {
               sh "ssh -o StrictHostKeyChecking=no asad@10.128.0.3 ${dockerRun}"
            } }
